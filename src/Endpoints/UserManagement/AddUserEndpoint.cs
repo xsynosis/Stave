@@ -31,7 +31,7 @@ namespace Stave.Endpoints.UserManagement
         {
             var res = new AddUserEndpointResponse();
 
-            if (AuthenticationUtility.CheckUserAdminFromToken(req.Token, db) || AuthenticationUtility.CheckUserAdminFromToken(req.Token, db))
+            if (AuthenticationUtility.CheckUserToken(req.Token, db) || AuthenticationUtility.CheckUserAdminFromToken(req.Token, db))
             {
                 res.Message = "Failed to add user; Either requester is not admin or the token used is invalid";
                 res.Status = false;
